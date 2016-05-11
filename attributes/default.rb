@@ -1,0 +1,10 @@
+default[:raintank_collector][:swap][:size] = 512
+default[:raintank_collector][:swap][:path] = "/swapspace"
+default[:raintank_collector][:collector_config] = "/etc/raintank/collector/config.json"
+default[:raintank_collector][:collector_name] = "PublicTest"
+default[:raintank_collector][:num_cpus] = nil
+default[:raintank_collector][:server_url] = "http://localhost:3000"
+default[:raintank_collector][:api_key] = "REPLACE_ME"
+default[:raintank_collector][:ping_port] = 8080
+default[:raintank_collector][:nice_level] = 0
+default[:raintank_collector][:packagecloud_repo] = "raintank/raintank"

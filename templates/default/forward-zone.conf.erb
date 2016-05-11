@@ -1,0 +1,5 @@
+# forward zone config, only for collectors running in GCE. Nothing else appears
+# to need this.
+forward-zone:
+  name: "<%= @forward_zone_name %>"
+  forward-addr: 169.254.169.254
