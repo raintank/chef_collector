@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_collector
+# Cookbook Name:: chef_collector
 # Recipe:: collectd
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -18,4 +18,4 @@
 #
 
 node.set["collectd_personality"] = "collector"
-include_recipe "raintank_base::collectd"
+include_recipe "chef_base::collectd"

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_collector
+# Cookbook Name:: chef_collector
 # Recipe:: install
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-packagecloud_repo node[:raintank_collector][:packagecloud_repo] do
+packagecloud_repo node[:chef_collector][:packagecloud_repo] do
   type "deb"
 end
 
-pkg_version = node['raintank_collector']['version']
+pkg_version = node['chef_collector']['version']
 pkg_action = if pkg_version.nil?
   :upgrade
 else
@@ -49,8 +49,8 @@ template '/etc/init/raintank-collector.conf' do
   group 'root'
   action :create
   variables({
-    collector_config: node['raintank_collector']['collector_config'],
-    nice_level: node['raintank_collector']['nice_level']
+    collector_config: node['chef_collector']['collector_config'],
+    nice_level: node['chef_collector']['nice_level']
   })
 end
 
@@ -64,8 +64,8 @@ service "raintank-collector" do
   action [ :enable, :start]
 end
 
-collector_name =  node['raintank_collector']['collector_name'] || node.hostname
-template node['raintank_collector']['collector_config'] do
+collector_name =  node['chef_collector']['collector_name'] || node.hostname
+template node['chef_collector']['collector_config'] do
   source 'config.json.erb'
   mode '0644'
   owner 'root'
@@ -73,10 +73,10 @@ template node['raintank_collector']['collector_config'] do
   action :create
   variables({
     collector_name: collector_name,
-    num_cpus: node['raintank_collector']['num_cpus'] || node.cpu.total,
-    server_url: node['raintank_collector']['server_url'],
-    api_key: node['raintank_collector']['api_key'],
-    ping_port: node['raintank_collector']['ping_port']
+    num_cpus: node['chef_collector']['num_cpus'] || node.cpu.total,
+    server_url: node['chef_collector']['server_url'],
+    api_key: node['chef_collector']['api_key'],
+    ping_port: node['chef_collector']['ping_port']
   })
   # notifies ....
   notifies :restart, 'service[raintank-collector]', :delayed

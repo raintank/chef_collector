@@ -84,9 +84,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[raintank_collector::swapspace]',
-#      'recipe[raintank_collector::unbound]',
-      'recipe[raintank_collector::install]'
+      'recipe[chef_collector::swapspace]',
+#      'recipe[chef_collector::unbound]',
+      'recipe[chef_collector::install]'
     ]
   end
 end

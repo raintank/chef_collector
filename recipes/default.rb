@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_collector
+# Cookbook Name:: chef_collector
 # Recipe:: default
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "raintank_base::default"
-include_recipe "raintank_collector::swapspace"
-include_recipe "raintank_collector::install"
-include_recipe "raintank_collector::unbound"
+include_recipe "chef_base::default"
+include_recipe "chef_collector::swapspace"
+include_recipe "chef_collector::install"
+include_recipe "chef_collector::unbound"

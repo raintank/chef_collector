@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_collector
+# Cookbook Name:: chef_collector
 # Recipe:: unbound
 #
 # Copyright (C) 2016 Raintank, Inc.

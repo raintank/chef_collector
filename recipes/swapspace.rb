@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_collector
+# Cookbook Name:: chef_collector
 # Recipe:: swapspace
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -19,10 +19,10 @@
 bash 'make_swap' do
   cwd '/'
   code <<-EOH
-    /bin/dd if=/dev/zero of=#{node['raintank_collector']['swap']['path']} bs=1M count=#{node['raintank_collector']['swap']['size']}
-    /sbin/mkswap #{node['raintank_collector']['swap']['path']}
-    echo "#{node['raintank_collector']['swap']['path']} node swap sw 0 0" >> /etc/fstab
+    /bin/dd if=/dev/zero of=#{node['chef_collector']['swap']['path']} bs=1M count=#{node['chef_collector']['swap']['size']}
+    /sbin/mkswap #{node['chef_collector']['swap']['path']}
+    echo "#{node['chef_collector']['swap']['path']} node swap sw 0 0" >> /etc/fstab
     /sbin/swapon -a
   EOH
-  not_if { ::File.exists?(node['raintank_collector']['swap']['path']) }
+  not_if { ::File.exists?(node['chef_collector']['swap']['path']) }
 end
