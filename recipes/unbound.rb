@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef_collector
+# Cookbook Name:: chef_probe
 # Recipe:: unbound
 #
 # Copyright (C) 2016 Raintank, Inc.

@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   $ vagrant plugin install vagrant-omnibus
   #
   if Vagrant.has_plugin?("vagrant-omnibus")
-    config.omnibus.chef_version = 'latest'
+    config.omnibus.chef_version = '12.7.2'
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
@@ -84,9 +84,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[chef_collector::swapspace]',
+      'recipe[chef_probe::swapspace]',
 #      'recipe[chef_collector::unbound]',
-      'recipe[chef_collector::install]'
+      'recipe[chef_probe::install]'
     ]
   end
 end

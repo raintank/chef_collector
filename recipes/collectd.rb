@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef_collector
+# Cookbook Name:: chef_probe
 # Recipe:: collectd
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-node.set["collectd_personality"] = "collector"
+node.set["collectd_personality"] = "probe"
 include_recipe "chef_base::collectd"

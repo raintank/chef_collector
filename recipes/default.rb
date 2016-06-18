@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef_collector
+# Cookbook Name:: chef_probe
 # Recipe:: default
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -18,6 +18,6 @@
 #
 
 include_recipe "chef_base::default"
-include_recipe "chef_collector::swapspace"
-include_recipe "chef_collector::install"
-include_recipe "chef_collector::unbound"
+include_recipe "chef_probe::swapspace"
+include_recipe "chef_probe::install"
+include_recipe "chef_probe::unbound"
